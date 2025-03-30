@@ -10,7 +10,8 @@ part './endpoints/account.dart';
 
 final admin = FirebaseAdminApp.initializeApp(
   'obsivision-site',
-  Credential.fromApplicationDefaultCredentials(),
+  Credential.fromServiceAccount(
+      File('buckets/keys/firebase-service-account.json')),
 );
 final firestore = Firestore(admin);
 final auth = Auth(admin);
@@ -38,11 +39,7 @@ final API api = API(
           endpoint: Endpoint(
             endpointTypes: [EndpointType.post],
             requiresAuth: true,
-            queryParameters: [
-              Param.required('Authorization',
-                  desc: 'The token isused by Firebase Auth.',
-                  cast: (obj) => obj as String)
-            ],
+            queryParameters: const [],
             bodyParameters: null,
             handleRequest: AccountCreate.handle,
           ),

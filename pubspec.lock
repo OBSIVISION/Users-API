@@ -198,10 +198,10 @@ packages:
     description:
       path: "dart_tools/boilerplates/http_apis/define"
       ref: HEAD
-      resolved-ref: "0564e5635e1df8395dac5776bfce0bc6e354e8d5"
+      resolved-ref: f9ec103d807466e056032f94129d72b46d5b7e0b
       url: "https://github.com/ObsidianXVI/Toolchain.git"
     source: git
-    version: "1.0.2"
+    version: "1.0.5"
   http_multi_server:
     dependency: transitive
     description:
